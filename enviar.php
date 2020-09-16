@@ -1,6 +1,8 @@
 <?php  
 
 // Llamando a los campos
+ini_set( 'display_errors', 1 );
+error_reporting( E_ALL );
 $nombre = $_POST["nombre"];
 $correo = $_POST["correo"];
 $telefono = $_POST["telefono"];
@@ -18,5 +20,18 @@ echo "<script> alert ('mesaje tres') </script>";
 // Enviando Mensaje
 mail($destinatario, $asunto, $carta);
 header("Location:mensaje-de-envio.html");
-
+echo "<script> alert ('mesaje 4') </script>";
 ?>
+
+
+<!-- 
+    ini_set( 'display_errors', 1 );
+    error_reporting( E_ALL );
+    $from = "prueba@solucionex.com";
+    $to = "javiernuber@gmail.com";
+    $subject = "Prueba de envio de email con PHP";
+    $message = "Esto es un email de prueba enviado con PHP";
+    $headers = "From:" . $from;
+    mail($to,$subject,$message, $headers);
+    echo "Email enviado!!";
+?> -->
